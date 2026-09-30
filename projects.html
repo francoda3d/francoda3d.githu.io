@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects · Alan Franco Díaz</title>
+<meta name="description" content="Selected 3D modeling, technical art, shader and tools projects by Alan Franco Díaz.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23B4A7E8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">Alan Franco Díaz</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html#about">About me</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-head">
+    <div class="wash" aria-hidden="true">
+      <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <filter id="wc3" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="3" seed="6" result="t"/>
+            <feDisplacementMap in="SourceGraphic" in2="t" scale="80" xChannelSelector="R" yChannelSelector="G" result="d"/>
+            <feGaussianBlur in="d" stdDeviation="16"/>
+          </filter>
+        </defs>
+        <g filter="url(#wc3)">
+          <circle cx="960" cy="180" r="230" fill="#B4A7E8" opacity="0.22"/>
+          <circle cx="1100" cy="300" r="150" fill="#EDA9C4" opacity="0.15"/>
+          <circle cx="300" cy="120" r="170" fill="#9BD3EE" opacity="0.10"/>
+        </g>
+      </svg>
+    </div>
+    <div class="wrap inner">
+      <h1 class="page-title">Projects</h1>
+      <p class="page-intro">Game-ready assets, real-time scenes, technical art and production work, from student projects to licensed titles.</p>
+    </div>
+  </section>
+
+  <section class="grid-section" aria-label="All projects">
+    <div class="wrap">
+      <div class="filters" id="filters" role="group" aria-label="Filter projects" hidden>
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="technical" aria-pressed="false">Technical art</button>
+        <button type="button" data-filter="shaders" aria-pressed="false">Shaders and materials</button>
+        <button type="button" data-filter="environments" aria-pressed="false">Environments</button>
+        <button type="button" data-filter="modeling" aria-pressed="false">3D modeling</button>
+        <button type="button" data-filter="games" aria-pressed="false">Games</button>
+      </div>
+
+      <ul class="grid" id="grid">
+        <li data-cat="technical">
+          <a class="card" href="work/leo-the-truck-reskins.html">
+            <div class="thumb media"><img src="assets/work/leo-the-truck-reskins/cover.jpg" alt="Leo the Truck, a yellow machine with a green cap and a pink truck gathered next to a yellow panel on sandy ground" width="1200" height="738" loading="lazy"></div>
+            <h3>Leo the Truck Reskins</h3>
+            <p class="cat">Technical art</p>
+            <p class="tools">Unity, Rive</p>
+          </a>
+        </li>
+        <li data-cat="shaders">
+          <a class="card" href="work/magic-crystal-sword.html">
+            <div class="thumb media"><img src="assets/work/magic-crystal-sword/thumb.jpg" alt="A glowing crystal sword next to two earlier stages of its shader" width="1200" height="900" loading="lazy"></div>
+            <h3>Magic Crystal Sword</h3>
+            <p class="cat">Shaders</p>
+            <p class="tools">Blender (Eevee)</p>
+          </a>
+        </li>
+        <li data-cat="environments">
+          <a class="card" href="work/swamp-house.html">
+            <div class="thumb media" style="--pos: 80% 50%"><img src="assets/work/swamp-house/cover.jpg" alt="Stylized swamp house on stilts with a boat, lit by warm windows and glowing green and orange light, with a person paddling on the left" width="1920" height="1080" loading="lazy"></div>
+            <h3>Swamp House</h3>
+            <p class="cat">Environments</p>
+            <p class="tools">Blender, Photoshop</p>
+          </a>
+        </li>
+        <li data-cat="environments">
+          <a class="card" href="work/uniat-museum.html">
+            <div class="thumb media"><img src="assets/work/uniat-museum/thumb.jpg" alt="Main hall of the virtual museum with a glowing statue under a stained-glass skylight, a red carpet, green columns and framed artworks, and a small floating robot" width="1200" height="900" loading="lazy"></div>
+            <h3>UNIAT Museum</h3>
+            <p class="cat">Environments</p>
+            <p class="tools">Blender, Substance Painter, Unreal Engine</p>
+          </a>
+        </li>
+        <li data-cat="shaders">
+          <a class="card" href="work/stylized-parallax-occlusion-materials.html">
+            <div class="thumb media"><img src="assets/work/stylized-parallax-occlusion-materials/thumb.jpg" alt="Stylized cracked green stone material with glowing edges, shown on a wall, a floor and a sphere" width="1200" height="900" loading="lazy"></div>
+            <h3>Stylized Parallax Occlusion Materials</h3>
+            <p class="cat">Materials</p>
+            <p class="tools">Substance Painter, Substance Designer, Unreal Engine 5</p>
+          </a>
+        </li>
+        <li data-cat="technical">
+          <a class="card" href="work/drawing-game-ui-overhaul.html">
+            <div class="thumb media"><img src="assets/work/drawing-game-ui-overhaul/thumb.jpg" alt="Drawing game screen with a colored cat and yarn ball, a palette of colors and a column of drawing tools" width="1200" height="900" loading="lazy"></div>
+            <h3>Drawing Game UI Overhaul</h3>
+            <p class="cat">Technical art</p>
+            <p class="tools">Unity</p>
+          </a>
+        </li>
+        <li data-cat="modeling">
+          <a class="card" href="work/kitty-toy-model.html">
+            <div class="thumb media"><img src="assets/work/kitty-toy-model/thumb.jpg" alt="Three views of a plush black cat in a green adventurer tunic with a sword on its back, standing in grass at sunset" width="1200" height="900" loading="lazy"></div>
+            <h3>3D Kitty Toy Model</h3>
+            <p class="cat">3D modeling</p>
+            <p class="tools">Blender, Substance Painter, Unreal Engine</p>
+          </a>
+        </li>
+        <li data-cat="environments">
+          <a class="card" href="work/who-is-here.html">
+            <div class="thumb media"><img src="assets/work/who-is-here/thumb.jpg" alt="Dark abandoned room with the words &quot;Who is here?&quot; written on a peeling wall, an old TV glowing red with a handprint on its screen, a metal chair, a broken window and a radiator" width="1200" height="900" loading="lazy"></div>
+            <h3>Who Is Here?</h3>
+            <p class="cat">Environments</p>
+            <p class="tools">Blender, Substance Painter, Unreal Engine</p>
+          </a>
+        </li>
+        <li data-cat="environments">
+          <a class="card" href="work/suspenseful-room.html">
+            <div class="thumb media"><img src="assets/work/suspenseful-room/thumb.jpg" alt="Dim room with a metal bed, a dresser with an old TV glowing green, a paneled door, a desk and a window with blinds, lit by wall sconces and a cold blue light" width="1200" height="900" loading="lazy"></div>
+            <h3>Suspenseful Room Environment</h3>
+            <p class="cat">Environments</p>
+            <p class="tools">Blender, Substance, Unreal Engine</p>
+          </a>
+        </li>
+        <li data-cat="games">
+          <a class="card" href="work/feast-tower.html">
+            <div class="thumb media"><img src="assets/work/feast-tower/cover.jpg" alt="Feast Tower main menu: a tall stack of colorful sandwich ingredients on a picnic plate over a checkered blanket, with the game logo above" width="1920" height="988" loading="lazy"></div>
+            <h3>Feast Tower</h3>
+            <p class="cat">Games</p>
+            <p class="tools">Unreal Engine</p>
+          </a>
+        </li>
+        <li data-cat="modeling">
+          <a class="card" href="work/led-luminaire-ar-catalog.html">
+            <div class="thumb media"><img src="assets/work/led-luminaire-ar-catalog/thumb.jpg" alt="A phone showing the Construlita catalog app with a 3D luminaire, its options and a technical sheet button" width="800" height="600" loading="lazy"></div>
+            <h3>LED Luminaire AR Catalog</h3>
+            <p class="cat">3D modeling</p>
+            <p class="tools">3ds Max, Photoshop, Unity</p>
+          </a>
+        </li>
+      </ul>
+      <p class="empty" id="empty" hidden>There are no projects in this category yet.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Alan Franco Díaz</span><span class="swatches" aria-hidden="true"><span style="--c:#B4A7E8"></span><span style="--c:#8FA4F0"></span><span style="--c:#9BD3EE"></span><span style="--c:#A9E3D0"></span><span style="--c:#F2E2A4"></span><span style="--c:#F3C5A8"></span><span style="--c:#EDA9C4"></span></span></div>
+</footer>
+
+<script>
+(function () {
+  var filters = document.getElementById('filters');
+  var items = Array.prototype.slice.call(document.querySelectorAll('#grid > li'));
+  var empty = document.getElementById('empty');
+  var buttons = Array.prototype.slice.call(filters.querySelectorAll('button'));
+
+  // Without JavaScript every project stays visible and the filter bar stays hidden.
+  filters.hidden = false;
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.getAttribute('data-filter');
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      var shown = 0;
+      items.forEach(function (li) {
+        var match = f === 'all' || li.getAttribute('data-cat') === f;
+        li.hidden = !match;
+        if (match) shown++;
+      });
+      empty.hidden = shown !== 0;
+    });
+  });
+})();
+</script>
+</body>
+</html>

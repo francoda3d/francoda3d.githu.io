@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alan Franco Díaz · Technical Artist and 3D Modeler</title>
+<meta name="description" content="Portfolio of Alan Franco Díaz, a Technical Artist and 3D Modeler: real-time shaders, materials, UI, procedural tools and game-ready 3D assets for Unreal Engine and Unity.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23B4A7E8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top">Alan Franco Díaz</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero-section" id="top">
+    <div class="wash" aria-hidden="true">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <filter id="wc1" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="3" seed="4" result="t"/>
+            <feDisplacementMap in="SourceGraphic" in2="t" scale="90" xChannelSelector="R" yChannelSelector="G" result="d"/>
+            <feGaussianBlur in="d" stdDeviation="16"/>
+          </filter>
+        </defs>
+        <g filter="url(#wc1)">
+          <circle cx="880" cy="380" r="320" fill="#B4A7E8" opacity="0.26"/>
+          <circle cx="1060" cy="560" r="190" fill="#EDA9C4" opacity="0.18"/>
+          <circle cx="240" cy="160" r="230" fill="#9BD3EE" opacity="0.12"/>
+          <circle cx="520" cy="660" r="170" fill="#A9E3D0" opacity="0.12"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="wrap hero">
+      <div>
+        <h1>Alan Franco Díaz</h1>
+        <p class="role">Technical Artist and 3D Modeler</p>
+        <p class="lead">I build worlds that can be played: 3D assets, materials, shaders, UI and procedural tools for Unreal Engine and Unity.</p>
+        <div class="actions">
+          <a class="btn" href="#projects">View projects</a>
+          <a class="link" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="canvas-box">
+          <canvas id="planet" role="img" aria-label="A procedurally generated planet with oceans, vegetation, clouds and an orbiting moon, rendered in real time. Use the sliders to change the water level, the vegetation and the clouds."></canvas>
+        </div>
+        <p id="planet-fallback" hidden>Your browser could not start WebGL, so the planet shader is not shown.</p>
+        <div class="controls">
+          <label for="water"><span class="name"><span class="chip" style="--c:#8FA4F0"></span>Water</span>
+            <input id="water" type="range" min="0" max="1" step="0.01" value="0.45">
+          </label>
+          <label for="veg"><span class="name"><span class="chip" style="--c:#A9E3D0"></span>Vegetation</span>
+            <input id="veg" type="range" min="0" max="1" step="0.01" value="0.55">
+          </label>
+          <label for="cloud"><span class="name"><span class="chip" style="--c:#EDA9C4"></span>Clouds</span>
+            <input id="cloud" type="range" min="0" max="1" step="0.01" value="0.35">
+          </label>
+        </div>
+        <div class="stage-foot">
+          <p class="caption">This planet is a real-time GLSL shader. Change the sliders, or move your cursor over it to move the light.</p>
+          <button class="btn btn-ghost" id="reroll" type="button">Generate a new planet</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="tint" aria-labelledby="h-about">
+    <div class="wrap split">
+      <h2 id="h-about">About me</h2>
+      <div>
+        <div class="about-top">
+          <figure class="portrait">
+            <img src="assets/alan.jpg" width="720" height="720" alt="Portrait of Alan Franco Díaz, smiling, in black and white">
+          </figure>
+          <div class="about-text">
+            <p>Hi, I'm Alan, a Technical Artist and 3D Modeler based in Zapopan, Mexico.</p>
+            <p>I connect art and technology: modeling, texturing, lighting and integrating full scenes in Unreal Engine, and turning hand-crafted assets and animation into responsive builds in Unity, including UI and gameplay animation.</p>
+            <p>I started as a 3D modeler making game environments, then led technical art and production teams at Orange Planet Labs and UNIAT, and most recently worked as a Technical Artist at Age of Learning. I like owning the implementation end to end, from asset integration and state machines to UI behavior and performance.</p>
+            <p class="ph">I'm open to new opportunities. Feel free to reach out.</p>
+            <div class="about-actions">
+              <a class="btn" href="assets/resume.pdf" download="Alan-Franco-Diaz-Resume.pdf">Download résumé</a>
+              <a class="btn btn-ghost" href="#contact">Contact me</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack">
+          <div class="group g-soft">
+            <h3>Software</h3>
+            <ul>
+              <li>Unreal Engine 5</li>
+              <li>Unity</li>
+              <li>Blender</li>
+              <li>Substance Painter</li>
+              <li>Substance Designer</li>
+              <li>3ds Max</li>
+              <li>ZBrush</li>
+              <li>Marmoset Toolbag</li>
+              <li>Photoshop</li>
+              <li>Illustrator</li>
+              <li>Premiere</li>
+              <li>Figma</li>
+              <li>Rive</li>
+            </ul>
+          </div>
+          <div class="group g-prod">
+            <h3>Production and collaboration</h3>
+            <ul>
+              <li>Jira</li>
+              <li>Confluence</li>
+              <li>Miro</li>
+              <li>Trello</li>
+              <li>Notion</li>
+              <li>Slack</li>
+              <li>Microsoft Office</li>
+              <li>Google Workspace</li>
+            </ul>
+          </div>
+          <div class="group g-skill wide">
+            <h3>Skills</h3>
+            <ul>
+              <li>High and low poly modeling</li>
+              <li>Procedural content creation</li>
+              <li>Generative modeling</li>
+              <li>Materials and shaders</li>
+              <li>Post processing</li>
+              <li>Scene lighting</li>
+              <li>Fluid simulations</li>
+              <li>Pixel art</li>
+              <li>Real-time performance optimization</li>
+              <li>Tools development</li>
+              <li>Machine learning</li>
+              <li>Web design and development</li>
+              <li>VR/AR development</li>
+              <li>Level design</li>
+              <li>Environment production</li>
+              <li>Team management</li>
+              <li>UI and animation implementation</li>
+              <li>State machines</li>
+              <li>Art pipelines</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="tint" aria-labelledby="h-projects">
+    <div class="wrap split">
+      <h2 id="h-projects">Projects</h2>
+      <div class="projects">
+        <article class="project">
+          <div class="thumb media"><img src="assets/work/leo-the-truck-reskins/cover.jpg" alt="Leo the Truck, a yellow machine with a green cap and a pink truck gathered next to a yellow panel on sandy ground" width="1200" height="738" loading="lazy"></div>
+          <h3>Leo the Truck Reskins</h3>
+          <p>Licensed reskins of existing ABCmouse games, built entirely on the art side in Unity: new state machines and a piece-randomization system, with zero engineering changes.</p>
+          <dl class="facts">
+            <div><dt>Role</dt><dd>Technical Artist</dd></div>
+            <div><dt>Tools</dt><dd>Unity, Rive</dd></div>
+            <div><dt>Year</dt><dd>2026</dd></div>
+          </dl>
+          <a class="link" href="work/leo-the-truck-reskins.html">View full case</a>
+        </article>
+
+        <article class="project">
+          <div class="thumb media"><img src="assets/work/magic-crystal-sword/cover-wide.jpg" alt="A glowing crystal sword next to three earlier stages of its shader, from a flat blue blade to the final crystal" width="1920" height="1080" loading="lazy"></div>
+          <h3>Magic Crystal Sword</h3>
+          <p>A procedural crystal shader in Blender's real-time renderer: emissive glow, layered transparency and arcane patterns, all built from a labeled node graph.</p>
+          <dl class="facts">
+            <div><dt>Role</dt><dd>Modeling, texturing and shader</dd></div>
+            <div><dt>Tools</dt><dd>Blender (Eevee)</dd></div>
+            <div><dt>Year</dt><dd>2025</dd></div>
+          </dl>
+          <a class="link" href="work/magic-crystal-sword.html">View full case</a>
+        </article>
+
+        <article class="project">
+          <div class="thumb media"><img src="assets/work/swamp-house/cover.jpg" alt="Stylized swamp house on stilts with a boat, lit by warm windows and glowing green and orange light, with a person paddling on the left" width="1920" height="1080" loading="lazy"></div>
+          <h3>Swamp House</h3>
+          <p>A 2D concept by Mathias Fekete turned into a low-poly 3D environment where lighting does the storytelling: warm window glows against cool swamp greens and blues.</p>
+          <dl class="facts">
+            <div><dt>Role</dt><dd>Modeling, texturing and lighting</dd></div>
+            <div><dt>Tools</dt><dd>Blender, Photoshop</dd></div>
+            <div><dt>Year</dt><dd>2025</dd></div>
+          </dl>
+          <a class="link" href="work/swamp-house.html">View full case</a>
+        </article>
+
+                        <div>
+          <a class="btn btn-ghost" href="projects.html">View all projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="tint" aria-labelledby="h-experience">
+    <div class="wrap split">
+      <h2 id="h-experience">Experience</h2>
+      <div>
+        <ol class="jobs">
+        <li class="job">
+          <time>Feb 2026 – Jul 2026</time>
+          <div>
+            <h3>Age of Learning</h3>
+            <p class="what">Technical Artist</p>
+            <ul>
+              <li>Implemented and optimized 2D and 3D assets, animation and UI in Unity across multiple titles in the ABCmouse app, building state machines and prototyping gameplay directly from Rive-authored animation for engineering handoff.</li>
+              <li>Led art implementation on a licensed collaboration between the flagship product and a major children's animation franchise: built new state machines and a piece-randomization system to create full game reskins without altering the original game's logic or layout.</li>
+              <li>Developed and maintained production pipelines and templates, including AI-assisted workflows, to improve output quality and consistency.</li>
+              <li>Designed and prototyped UI and interaction flows in Figma and Rive, and worked with engineers to debug, profile and optimize visual systems.</li>
+              <li>Acted as a key technical liaison between production and project managers, flagging integration risks early (for example, Rive-to-engineering handoff timing) to keep the roadmap realistic.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <time>Aug 2025 – Feb 2026</time>
+          <div>
+            <h3>UNIAT</h3>
+            <p class="what">Director General, Guadalajara Campus</p>
+            <ul>
+              <li>Led academic and administrative operations for the Guadalajara campus while staying hands-on in game and art production projects.</li>
+              <li>Built strategic industry partnerships connecting university training with the games, film and digital entertainment sectors.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <time>Oct 2024 – Aug 2025</time>
+          <div>
+            <h3>UNIAT</h3>
+            <p class="what">Director of Partnerships and Development</p>
+            <ul>
+              <li>Coordinated academic and professional projects with students, supporting asset preparation, pipelines and technical processes for production-ready integration.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <time>Aug 2022 – Oct 2024</time>
+          <div>
+            <h3>Orange Planet Labs</h3>
+            <p class="what">Technical Art Lead / Program Manager</p>
+            <ul>
+              <li>Led production of 3D content for games in Unreal Engine and Unity, including modeling, texturing, lighting and full engine integration.</li>
+              <li>Led a team of artists and worked with developers to keep asset and UI integration seamless across multiple concurrent student and professional projects.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <time>May 2017 – Feb 2019</time>
+          <div>
+            <h3>Alsain Soluciones Audiovisuales</h3>
+            <p class="what">3D Modeler and Texture Artist</p>
+            <ul>
+              <li>Modeled and textured game environments, working with designers to create visually compelling, production-ready spaces.</li>
+              <li>Focused on low-poly modeling, game design and game art.</li>
+            </ul>
+          </div>
+        </li>
+        </ol>
+
+        <h3 class="sub">Education and languages</h3>
+        <ol class="jobs">
+          <li class="job">
+            <time>2014 – 2018</time>
+            <div>
+              <h3>UNIAT</h3>
+              <p class="what">Bachelor's Degree in Video Game Art</p>
+              <p>Training in game design and development, with an emphasis on 3D modeling and game engines.</p>
+            </div>
+          </li>
+        </ol>
+        <p class="langs">Spanish (native). English (fluent), my daily working language at Age of Learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact" aria-labelledby="h-contact">
+    <div class="wash" aria-hidden="true">
+      <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <filter id="wc2" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.009 0.013" numOctaves="3" seed="9" result="t"/>
+            <feDisplacementMap in="SourceGraphic" in2="t" scale="80" xChannelSelector="R" yChannelSelector="G" result="d"/>
+            <feGaussianBlur in="d" stdDeviation="16"/>
+          </filter>
+        </defs>
+        <g filter="url(#wc2)">
+          <circle cx="980" cy="300" r="240" fill="#9BD3EE" opacity="0.14"/>
+          <circle cx="820" cy="430" r="170" fill="#EDA9C4" opacity="0.14"/>
+          <circle cx="300" cy="380" r="180" fill="#B4A7E8" opacity="0.14"/>
+        </g>
+      </svg>
+    </div>
+    <div class="wrap split">
+      <h2 id="h-contact">Contact</h2>
+      <div>
+        <p class="contact-lead">Have a project or an open role in mind? Let's talk.</p>
+        <a class="btn" href="mailto:francoda3d@gmail.com">francoda3d@gmail.com</a>
+        <ul class="contact-links">
+          <li><a href="https://www.linkedin.com/in/francoda3d" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.artstation.com/ifrancou" target="_blank" rel="noopener">ArtStation</a></li>
+          <li><a href="https://github.com/francoda3d" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://ifrancou.itch.io" target="_blank" rel="noopener">itch.io</a></li>
+        </ul>
+        <p class="place">Zapopan, Jalisco, Mexico</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Alan Franco Díaz</span><span class="swatches" aria-hidden="true"><span style="--c:#B4A7E8"></span><span style="--c:#8FA4F0"></span><span style="--c:#9BD3EE"></span><span style="--c:#A9E3D0"></span><span style="--c:#F2E2A4"></span><span style="--c:#F3C5A8"></span><span style="--c:#EDA9C4"></span></span></div>
+</footer>
+
+<script>
+(function () {
+  var canvas = document.getElementById('planet');
+  var fallback = document.getElementById('planet-fallback');
+  var controls = document.querySelector('.controls');
+  var stageFoot = document.querySelector('.stage-foot');
+
+  function showFallback() {
+    canvas.hidden = true;
+    fallback.hidden = false;
+    controls.hidden = true;
+    stageFoot.hidden = true;
+  }
+
+  var gl = canvas.getContext('webgl', { antialias: true, alpha: true, premultipliedAlpha: true }) ||
+           canvas.getContext('experimental-webgl');
+  if (!gl) { showFallback(); return; }
+
+  var VS = 'attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }';
+
+  var FS = [
+    '#ifdef GL_FRAGMENT_PRECISION_HIGH',
+    'precision highp float;',
+    '#else',
+    'precision mediump float;',
+    '#endif',
+    'uniform vec2 uRes;',
+    'uniform float uTime;',
+    'uniform float uWater;',
+    'uniform float uVeg;',
+    'uniform float uCloud;',
+    'uniform float uSeed;',
+    'uniform vec2 uLight;',
+
+    'float hash(vec3 p){',
+    '  p = fract(p * 0.3183099 + vec3(0.1));',
+    '  p *= 17.0;',
+    '  return fract(p.x * p.y * p.z * (p.x + p.y + p.z));',
+    '}',
+    'float hash21(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }',
+    'float noise(vec3 x){',
+    '  vec3 i = floor(x); vec3 f = fract(x);',
+    '  f = f * f * (3.0 - 2.0 * f);',
+    '  return mix(',
+    '    mix(mix(hash(i + vec3(0.0,0.0,0.0)), hash(i + vec3(1.0,0.0,0.0)), f.x),',
+    '        mix(hash(i + vec3(0.0,1.0,0.0)), hash(i + vec3(1.0,1.0,0.0)), f.x), f.y),',
+    '    mix(mix(hash(i + vec3(0.0,0.0,1.0)), hash(i + vec3(1.0,0.0,1.0)), f.x),',
+    '        mix(hash(i + vec3(0.0,1.0,1.0)), hash(i + vec3(1.0,1.0,1.0)), f.x), f.y),',
+    '    f.z);',
+    '}',
+    'float fbm(vec3 p){',
+    '  float a = 0.5; float s = 0.0;',
+    '  for (int i = 0; i < 4; i++) { s += a * noise(p); p *= 2.03; a *= 0.5; }',
+    '  return s / 0.9375;',
+    '}',
+    'vec4 over(vec4 a, vec4 b){ return a + b * (1.0 - a.a); }',
+
+    'void main(){',
+    '  vec2 uv = (gl_FragCoord.xy * 2.0 - uRes) / min(uRes.x, uRes.y);',
+    '  float R = 0.74;',
+    '  float Rm = 0.13;',
+    '  vec3 L = normalize(vec3(uLight, 0.7));',
+
+    // ---- Stars (soft pastel dots) ----
+    '  vec2 sc = uv * 14.0;',
+    '  vec2 cell = floor(sc);',
+    '  vec2 sf = fract(sc) - 0.5;',
+    '  float hs = hash21(cell);',
+    '  vec2 jit = vec2(hash21(cell + 3.1), hash21(cell + 7.7)) - 0.5;',
+    '  float sd = length(sf - jit * 0.6);',
+    '  float tw = 0.6 + 0.4 * sin(uTime * 1.3 + hs * 40.0);',
+    '  float star = step(0.94, hs) * (1.0 - smoothstep(0.02, 0.07 + 0.05 * hs, sd)) * tw;',
+    '  vec3 starCol = mix(vec3(0.71, 0.65, 0.91), vec3(0.95, 0.78, 0.66), hash21(cell + 9.3));',
+    '  float starA = star * 0.8;',
+    '  vec4 stars = vec4(starCol * starA, starA);',
+
+    // ---- Moon ----
+    '  float mt = uTime * 0.35 + 1.0;',
+    '  vec3 mp = vec3(cos(mt) * 0.95, sin(mt) * 0.28 + 0.42, sin(mt));',
+    '  vec4 moonV = vec4(0.0);',
+    '  vec2 md = uv - mp.xy;',
+    '  float dm = length(md);',
+    '  if (dm < Rm + 0.01) {',
+    '    float mm = 1.0 - smoothstep(Rm - 0.006, Rm + 0.002, dm);',
+    '    float zz = sqrt(max(Rm * Rm - dm * dm, 0.0));',
+    '    vec3 Nm = vec3(md, zz) / Rm;',
+    '    float dmf = dot(Nm, L) * 0.5 + 0.5;',
+    '    float bm = clamp(floor(dmf * 3.0) / 2.0, 0.0, 1.0);',
+    '    vec3 mb = vec3(0.86, 0.76, 0.90);',
+    '    float cr = step(0.68, noise(Nm * 4.0 + vec3(4.0, 1.0, 2.0)));',
+    '    mb *= 1.0 - cr * 0.16;',
+    '    vec3 mc = mix(mb * vec3(0.52, 0.50, 0.80), mb * 1.04, bm);',
+    '    moonV = vec4(clamp(mc, 0.0, 1.0) * mm, mm);',
+    '  }',
+
+    // ---- Planet ----
+    '  float d = length(uv);',
+    '  vec4 planetV = vec4(0.0);',
+    '  if (d < R + 0.4) {',
+    '    float dn = d + (noise(vec3(uv * 7.0, 1.3)) - 0.5) * 0.012;',
+    '    float mask = 1.0 - smoothstep(R - 0.006, R + 0.004, dn);',
+    '    float glow = exp(-max(dn - R, 0.0) * 8.0) * (1.0 - mask);',
+    '    vec3 glowCol = vec3(0.62, 0.66, 0.94);',
+    '    float gA = glow * 0.32;',
+    '    vec3 pc = glowCol * gA;',
+    '    float pa = gA;',
+    '    if (mask > 0.0) {',
+    '      float z = sqrt(max(R * R - d * d, 0.0));',
+    '      vec3 N = vec3(uv, z) / R;',
+    '      float ang = uTime * 0.10;',
+    '      float rc = cos(ang); float rs = sin(ang);',
+    '      vec3 p = vec3(N.x * rc + N.z * rs, N.y, -N.x * rs + N.z * rc);',
+    '      p = vec3(p.x, p.y * 0.9659 - p.z * 0.2588, p.y * 0.2588 + p.z * 0.9659);',
+    '      vec3 sv = vec3(uSeed, uSeed * 0.7, uSeed * 1.3);',
+
+    // terrain
+    '      float h = fbm(p * 2.0 + vec3(3.7, 1.2, 5.1) + sv);',
+    '      float sea = mix(0.40, 0.62, uWater);',
+    '      float isWater = step(h, sea);',
+    '      float depth = clamp((sea - h) / 0.22, 0.0, 1.0);',
+    '      float elev = clamp((h - sea) / 0.25, 0.0, 1.0);',
+    '      float lat = abs(p.y);',
+    '      float moist = fbm(p * 3.2 + vec3(9.1, 4.4, 2.2) + sv);',
+    '      float vegScore = moist * (1.0 - smoothstep(0.45, 0.95, elev)) * (1.0 - smoothstep(0.62, 0.92, lat));',
+    '      float t = mix(0.78, 0.10, uVeg);',
+
+    // colors
+    '      vec3 deepC = vec3(0.36, 0.42, 0.78);',
+    '      vec3 shallowC = vec3(0.56, 0.80, 0.92);',
+    '      float wb = clamp(mix(depth, floor(depth * 3.0) / 2.0, 0.6), 0.0, 1.0);',
+    '      vec3 waterCol = mix(shallowC, deepC, wb);',
+
+    '      vec3 sand = vec3(0.95, 0.80, 0.66);',
+    '      vec3 vegA = vec3(0.66, 0.89, 0.78);',
+    '      vec3 vegB = vec3(0.45, 0.73, 0.62);',
+    '      vec3 rock = vec3(0.78, 0.66, 0.85);',
+    '      vec3 snow = vec3(0.96, 0.94, 0.98);',
+    '      vec3 land = mix(sand, rock, smoothstep(0.35, 0.75, elev));',
+    '      float vegMask = smoothstep(t, t + 0.05, vegScore);',
+    '      vec3 vegCol = mix(vegA, vegB, smoothstep(0.35, 0.7, moist));',
+    '      land = mix(land, vegCol, vegMask);',
+    '      land = mix(land, vec3(0.97, 0.88, 0.72), (1.0 - smoothstep(0.0, 0.07, elev)) * 0.8);',
+
+    '      vec3 base = mix(land, waterCol, isWater);',
+    '      float snowMask = smoothstep(0.88, 0.92, lat + elev * 0.22 + (moist - 0.5) * 0.1);',
+    '      base = mix(base, snow, snowMask);',
+
+    // pigment pooling at coasts and vegetation edges
+    '      float coast = 1.0 - smoothstep(0.0, 0.010, abs(h - sea));',
+    '      base = mix(base, base * vec3(0.78, 0.78, 0.92), coast * 0.7 * (1.0 - snowMask));',
+    '      float vb = 1.0 - smoothstep(0.0, 0.018, abs(vegScore - t));',
+    '      base = mix(base, base * vec3(0.85, 0.90, 0.95), vb * 0.5 * (1.0 - isWater) * (1.0 - snowMask));',
+
+    // clouds
+    '      float ca = uTime * 0.05;',
+    '      vec3 pcl = vec3(p.x * cos(ca) + p.z * sin(ca), p.y, -p.x * sin(ca) + p.z * cos(ca));',
+    '      float cl = fbm(pcl * 2.6 + vec3(1.3, 7.7, 3.1) + sv);',
+    '      float ct = mix(0.74, 0.36, uCloud);',
+    '      float cm = smoothstep(ct, ct + 0.06, cl) * step(0.01, uCloud);',
+
+    // light, quantized into soft bands with a cool violet shadow
+    '      float diff = dot(N, L) * 0.5 + 0.5;',
+    '      float b = clamp(mix(diff, floor(diff * 4.0) / 3.0, 0.65), 0.0, 1.0);',
+    '      vec3 shadeTint = vec3(0.55, 0.52, 0.82);',
+    '      vec3 col = mix(base * shadeTint, base * 1.06, b);',
+    '      vec3 cloudCol = vec3(0.98, 0.93, 0.97);',
+    '      vec3 cloudLit = mix(cloudCol * vec3(0.62, 0.58, 0.85), cloudCol, b);',
+    '      col = mix(col, cloudLit, cm * 0.88);',
+
+    // water glint
+    '      vec3 Rf = reflect(-L, N);',
+    '      float spec = pow(max(Rf.z, 0.0), 24.0);',
+    '      col += vec3(1.0, 0.96, 0.90) * step(0.6, spec) * 0.4 * isWater * (1.0 - cm) * (1.0 - snowMask);',
+
+    // atmosphere on the lit limb
+    '      float rim = pow(1.0 - N.z, 3.0) * smoothstep(0.2, 0.6, b);',
+    '      col += vec3(0.55, 0.60, 0.95) * rim * 0.5;',
+
+    // watercolor paper grain and bleeding edge
+    '      col *= 1.0 + (hash21(gl_FragCoord.xy) - 0.5) * 0.06;',
+    '      col *= 1.0 + (noise(vec3(uv * 60.0, 0.5)) - 0.5) * 0.08;',
+    '      float edgeD = smoothstep(R - 0.06, R, dn);',
+    '      col = mix(col, col * vec3(0.62, 0.56, 0.86), edgeD * 0.55);',
+
+    '      col = clamp(col, 0.0, 1.0);',
+    '      pc = col * mask + glowCol * gA;',
+    '      pa = clamp(mask + gA, 0.0, 1.0);',
+    '    }',
+    '    planetV = vec4(pc, pa);',
+    '  }',
+
+    // ---- Composite: the moon passes in front of and behind the planet ----
+    '  vec4 res;',
+    '  if (mp.z > 0.0) { res = over(moonV, over(planetV, stars)); }',
+    '  else { res = over(planetV, over(moonV, stars)); }',
+    '  gl_FragColor = res;',
+    '}'
+  ].join('\n');
+
+  function compile(type, src) {
+    var s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+      console.error(gl.getShaderInfoLog(s));
+      return null;
+    }
+    return s;
+  }
+
+  var vs = compile(gl.VERTEX_SHADER, VS);
+  var fs = compile(gl.FRAGMENT_SHADER, FS);
+  if (!vs || !fs) { showFallback(); return; }
+
+  var prog = gl.createProgram();
+  gl.attachShader(prog, vs);
+  gl.attachShader(prog, fs);
+  gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+    console.error(gl.getProgramInfoLog(prog));
+    showFallback();
+    return;
+  }
+  gl.useProgram(prog);
+
+  var buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+  var loc = gl.getAttribLocation(prog, 'p');
+  gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+  var U = {};
+  ['uRes', 'uTime', 'uWater', 'uVeg', 'uCloud', 'uSeed', 'uLight'].forEach(function (n) {
+    U[n] = gl.getUniformLocation(prog, n);
+  });
+
+  var waterInput = document.getElementById('water');
+  var vegInput = document.getElementById('veg');
+  var cloudInput = document.getElementById('cloud');
+  var reroll = document.getElementById('reroll');
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pointer = null;
+  var seed = 0;
+  var visible = true;
+
+  function resize() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 1.75);
+    var w = Math.max(1, Math.round(canvas.clientWidth * dpr));
+    var h = Math.max(1, Math.round(canvas.clientHeight * dpr));
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+    }
+    gl.viewport(0, 0, canvas.width, canvas.height);
+  }
+
+  function draw(t) {
+    resize();
+    var light;
+    if (pointer) {
+      light = pointer;
+    } else if (reduce) {
+      light = [-0.65, 0.5];
+    } else {
+      light = [-0.65 + Math.cos(t * 0.25) * 0.3, 0.5 + Math.sin(t * 0.3) * 0.25];
+    }
+    gl.uniform2f(U.uRes, canvas.width, canvas.height);
+    gl.uniform1f(U.uTime, reduce ? 0 : t);
+    gl.uniform1f(U.uWater, parseFloat(waterInput.value));
+    gl.uniform1f(U.uVeg, parseFloat(vegInput.value));
+    gl.uniform1f(U.uCloud, parseFloat(cloudInput.value));
+    gl.uniform1f(U.uSeed, seed);
+    gl.uniform2f(U.uLight, light[0], light[1]);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+  }
+
+  function frame(ms) {
+    if (visible) draw(ms / 1000);
+    requestAnimationFrame(frame);
+  }
+
+  function redrawStatic() { if (reduce) draw(0); }
+
+  canvas.addEventListener('pointermove', function (e) {
+    var r = canvas.getBoundingClientRect();
+    pointer = [
+      ((e.clientX - r.left) / r.width) * 2 - 1,
+      -(((e.clientY - r.top) / r.height) * 2 - 1)
+    ];
+    redrawStatic();
+  });
+  canvas.addEventListener('pointerleave', function () { pointer = null; redrawStatic(); });
+
+  [waterInput, vegInput, cloudInput].forEach(function (el) {
+    el.addEventListener('input', redrawStatic);
+  });
+  reroll.addEventListener('click', function () {
+    seed = Math.random() * 60;
+    redrawStatic();
+  });
+  window.addEventListener('resize', redrawStatic);
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting;
+    }).observe(canvas);
+  }
+
+  if (reduce) { draw(0); } else { requestAnimationFrame(frame); }
+})();
+</script>
+</body>
+</html>
